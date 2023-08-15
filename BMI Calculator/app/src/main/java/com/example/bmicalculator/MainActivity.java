@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,18 +15,59 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button submit = findViewById(R.id.submit);
 
-        submit.setOnClickListener(new View.OnClickListener() {
+
+        EditText editWeight,editHeightFt;
+        Button btnCalculate;
+        TextView textResult;
+        LinearLayout linearLayout_bg;
+
+        editWeight = findViewById(R.id.editWeight);
+        editHeightFt = findViewById(R.id.editHeightFt);
+
+        btnCalculate = findViewById(R.id.btnCalculate);
+
+        textResult = findViewById(R.id.textResult);
+        linearLayout_bg = findViewById(R.id.linearLayout_bg);
+
+        btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText age = findViewById(R.id.age);
-                EditText height = findViewById(R.id.height);
+                int wt = Integer.parseInt(editWeight.getText().toString());
+                float ft = Float.parseFloat(editHeightFt.getText().toString());
 
-                Toast.makeText(MainActivity.this, "age is "+age.getText(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(MainActivity.this, "height is "+height.getText(), Toast.LENGTH_SHORT).show();
+
+                float totalIn = ft*12;
+                double totalCm = totalIn*2.53;
+                double totalM = totalCm/100;
+
+                double bmi = wt/(totalM*totalM);
+
+                if(bmi > 25){
+                    textResult.setText("You are over Weight ...");
+                    editWeight.setTextColor(getResources().getColor(R.color.black));
+                    editHeightFt.setTextColor(getResources().getColor(R.color.black));
+                    textResult.setTextColor(getResources().getColor(R.color.black));
+                    linearLayout_bg.setBackgroundColor(getResources().getColor(R.color.over_wt));
+
+                } else if (bmi<18) {
+                    textResult.setText("You are Under Weight ...");
+                    editWeight.setTextColor(getResources().getColor(R.color.black));
+                    editHeightFt.setTextColor(getResources().getColor(R.color.black));
+                    textResult.setTextColor(getResources().getColor(R.color.black));
+                    linearLayout_bg.setBackgroundColor(getResources().getColor(R.color.under_wt));
+                }else {
+                    textResult.setText("You are healthy ...");
+                    editWeight.setTextColor(getResources().getColor(R.color.black));
+                    editHeightFt.setTextColor(getResources().getColor(R.color.black));
+                    textResult.setTextColor(getResources().getColor(R.color.black));
+                    linearLayout_bg.setBackgroundColor(getResources().getColor(R.color.healthy));
+                }
 
             }
         });
+
     }
+
+
 }
