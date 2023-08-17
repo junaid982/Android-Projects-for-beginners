@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -29,14 +30,13 @@ public class MainActivity extends AppCompatActivity {
         resetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = getIntent();
-                finish();
-                startActivity(intent);
+                recreate();
             }
         });
 
         init();
     }
+
 
 
     private void init() {
@@ -94,13 +94,13 @@ public class MainActivity extends AppCompatActivity {
 
 
                 } else if (b4.equals(b5) && b5.equals(b6) && !b4.equals("")) {
-                    p = getPlayer(b1);
+                    p = getPlayer(b4);
                     result.setText("Winner is "+p);
                     resetBtn.setVisibility(View.VISIBLE);
 
 
                 } else if (b7.equals(b8) && b8.equals(b9) && !b7.equals("")) {
-                    p = getPlayer(b1);
+                    p = getPlayer(b7);
                     result.setText("Winner is "+p);
                     resetBtn.setVisibility(View.VISIBLE);
 
@@ -110,12 +110,12 @@ public class MainActivity extends AppCompatActivity {
                     resetBtn.setVisibility(View.VISIBLE);
 
                 } else if (b2.equals(b5) && b5.equals(b8) && !b2.equals("")) {
-                    p = getPlayer(b1);
+                    p = getPlayer(b2);
                     result.setText("Winner is "+p);
                     resetBtn.setVisibility(View.VISIBLE);
 
                 } else if (b3.equals(b6) && b6.equals(b9) && !b3.equals("")) {
-                    p = getPlayer(b1);
+                    p = getPlayer(b3);
                     result.setText("Winner is "+p);
                     resetBtn.setVisibility(View.VISIBLE);
 
@@ -125,10 +125,16 @@ public class MainActivity extends AppCompatActivity {
                     resetBtn.setVisibility(View.VISIBLE);
 
                 } else if (b3.equals(b5) && b5.equals(b7) && !b3.equals("")) {
-                    p = getPlayer(b1);
-                    result.setText("Winner is "+p);
+                    p = getPlayer(b3);
+                    result.setText("Winner is "+getPlayer(b3));
                     resetBtn.setVisibility(View.VISIBLE);
                 }
+                else {
+                    result.setText("Match Draw");
+                    resetBtn.setVisibility(View.VISIBLE);
+                }
+
+
 
             }
         }
@@ -139,13 +145,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     public String getPlayer(String b) {
-        String player = "";
-        if (b == "X") {
+        return b.equals("X")?"Player 1":"Player 2";
+        /*
+        if (b.equals("X") ) {
             player = "Player 1";
-        } else {
+        } else if(b.equals("0")){
             player = "Player 2";
         }
-        return player;
+        return player;*/
     }
 }
 
