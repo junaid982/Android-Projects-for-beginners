@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/user_name_gradient"
+    android:orientation="vertical"
+    tools:context=".UserNameActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter Player Names"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_above="@id/playerName1"
+            android:layout_marginBottom="40dp"
+            />
+
+        <EditText
+            android:id="@+id/playerName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:hint="Player 1 Name "
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/playerName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/playerName1"
+            android:gravity="center"
+            android:hint="Player 2 Name"
+            android:textColorHint="@color/white"
+            android:layout_centerInParent="true"
+            android:textSize="24sp"
+            />
+    
+    <TextView
+        android:id="@+id/startBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:textSize="24sp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/playerName2"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/startbtn_gradient"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Created By JS Junaid"
+        android:gravity="right"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        />
+
+
+
+
+</RelativeLayout>
