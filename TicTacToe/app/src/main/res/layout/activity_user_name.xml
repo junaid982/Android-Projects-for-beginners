@@ -8,65 +8,62 @@
     android:orientation="vertical"
     tools:context=".UserNameActivity">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Enter Player Names"
-            android:textSize="30sp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:layout_above="@id/playerName1"
-            android:layout_marginBottom="40dp"
-            />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/playerName1"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="Enter Player Names"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/playerName1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:hint="Player 1 Name "
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="24sp" />
+    <EditText
+        android:id="@+id/playerName1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:ems="10"
+        android:hint="Player 1 Name "
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="24sp" />
 
-        <EditText
-            android:id="@+id/playerName2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/playerName1"
-            android:gravity="center"
-            android:hint="Player 2 Name"
-            android:textColorHint="@color/white"
-            android:layout_centerInParent="true"
-            android:textSize="24sp"
-            />
-    
+    <EditText
+        android:id="@+id/playerName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/playerName1"
+        android:layout_centerInParent="true"
+        android:ems="10"
+        android:hint="Player 2 Name"
+        android:textColorHint="@color/white"
+        android:textSize="24sp" />
+
     <TextView
         android:id="@+id/startBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start"
-        android:textSize="24sp"
+        android:layout_below="@id/playerName2"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_border"
+        android:backgroundTint="@color/white"
         android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
-        android:layout_centerInParent="true"
-        android:layout_below="@id/playerName2"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/startbtn_gradient"
-        />
+        android:text="Start"
+
+        android:textSize="24sp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Created By JS Junaid"
-        android:gravity="right"
-        android:textColor="@color/white"
-        android:textSize="18sp"
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
-        />
-
-
+        android:gravity="right"
+        android:text="Created By JS Junaid"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
 
 
 </RelativeLayout>
