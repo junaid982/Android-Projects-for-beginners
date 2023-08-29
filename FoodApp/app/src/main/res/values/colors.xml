@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="orange_dark">#a68044</color>
+    <color name="orange_light">#c98210</color>
+    <color name="facebook_color">#3c62ac</color>
+    <color name="google_color">#db4a39</color>
+</resources>
