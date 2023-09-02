@@ -2,6 +2,7 @@ package com.example.androidwithsqlitedatabase.data;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -10,6 +11,9 @@ import androidx.annotation.Nullable;
 
 import com.example.androidwithsqlitedatabase.model.Contact;
 import com.example.androidwithsqlitedatabase.params.Params;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyDbHandler extends SQLiteOpenHelper {
 
@@ -21,7 +25,7 @@ public class MyDbHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String create = String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY , %s TEXT , %s TEXT);",Params.TABLE_NAME ,Params.KEY_ID,Params.KEY_NAME , Params.KEY_PHONE );
-        Log.d("db" , String.format("Query being run is : ",create));
+        Log.d("db" , String.format("Query being run is : %s",create));
         db.execSQL(create);
 
     }
@@ -46,6 +50,36 @@ public class MyDbHandler extends SQLiteOpenHelper {
 
         db.close();
     }
+
+
+    // ================== this method return all contacts data
+    public List<Contact> getAllContacts(){
+
+        List<Contact> contactList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        //generate query to read the database
+        String select = String.format("select * from %s;",Params.TABLE_NAME);
+
+        Cursor cursor = db.rawQuery(select , null);
+
+
+        //loop through the row
+        if(cursor.moveToFirst()){
+            do{
+                Contact contact = new Contact();
+                contact.setId(Integer.parseInt(cursor.getString(0)));
+                contact.setName(cursor.getString(1));
+                contact.setPhoneNumber(cursor.getString(2));
+
+                contactList.add(contact);
+
+            }while (cursor.moveToNext());
+        }
+        return contactList;
+
+    }
+
 }
 
 

@@ -3,9 +3,12 @@ package com.example.androidwithsqlitedatabase;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.androidwithsqlitedatabase.data.MyDbHandler;
 import com.example.androidwithsqlitedatabase.model.Contact;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,19 +26,19 @@ public class MainActivity extends AppCompatActivity {
         Contact std4 = new Contact();
 
         std.setName("Junaid Ansari");
-        std.setName("9821209237");
+        std.setPhoneNumber("9821209237");
 
         std1.setName("Khan Shaziya");
-        std1.setName("8898991357");
+        std1.setPhoneNumber("8898991357");
 
         std2.setName("Ansari Junaid");
-        std2.setName("9892339358");
+        std2.setPhoneNumber("9892339358");
 
         std3.setName("Ayaan");
-        std3.setName("987456321");
+        std3.setPhoneNumber("987456321");
 
         std4.setName("Ansari");
-        std4.setName("789654123");
+        std4.setPhoneNumber("789654123");
 
         db.addContact(std);
         db.addContact(std1);
@@ -43,5 +46,36 @@ public class MainActivity extends AppCompatActivity {
         db.addContact(std3);
         db.addContact(std4);
 
+
+        List<Contact> allContacts = db.getAllContacts();
+
+        Log.d("db", "All Contact List "+allContacts+"\n");
+
+        for(Contact contact:allContacts){
+            Log.d("db" , String.format("Id : %s \n Name : %s \n Phone Number : %s \n ," , contact.getId(),contact.getName() , contact.getPhoneNumber()));
+        }
+
+
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
