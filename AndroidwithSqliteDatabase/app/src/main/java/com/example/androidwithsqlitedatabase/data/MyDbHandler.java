@@ -80,6 +80,24 @@ public class MyDbHandler extends SQLiteOpenHelper {
 
     }
 
+
+    // ================== this method update existing contact data
+
+    public int updateContact(Contact contact){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(Params.KEY_NAME , contact.getName());
+        values.put(Params.KEY_PHONE , contact.getPhoneNumber());
+
+//        int update = db.update(Params.TABLE_NAME, Params.KEY_ID + "=?", new String[]{String.valueOf((contact.getId()))});
+//        return update;
+//        return db.update(String table, ContentValues values, String whereClause, String[] whereArgs);
+        return db.update(Params.TABLE_NAME, values, Params.KEY_ID+"=?", new String[] {String.valueOf(contact.getId())});
+
+    }
+
 }
 
 

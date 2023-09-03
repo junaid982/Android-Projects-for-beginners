@@ -47,6 +47,16 @@ public class MainActivity extends AppCompatActivity {
         db.addContact(std4);
 
 
+        // update data
+        std4.setId(11);
+        std4.setName("Changed Junaid");
+        std4.setPhoneNumber("000000000");
+
+        int affectedRows = db.updateContact(std4);
+        Log.d("db" , "No of Effected Rows "+affectedRows);
+
+
+        //get all data
         List<Contact> allContacts = db.getAllContacts();
 
         Log.d("db", "All Contact List "+allContacts+"\n");
