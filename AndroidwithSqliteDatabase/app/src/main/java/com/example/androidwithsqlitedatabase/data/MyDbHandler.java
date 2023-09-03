@@ -98,6 +98,15 @@ public class MyDbHandler extends SQLiteOpenHelper {
 
     }
 
+
+    // ================== this method  existing contact data by id
+    public void deleteContactById(Contact contact){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(Params.TABLE_NAME , Params.KEY_ID+"=?",
+                new String[]{String.valueOf(contact.getId())});
+    }
+
 }
 
 
