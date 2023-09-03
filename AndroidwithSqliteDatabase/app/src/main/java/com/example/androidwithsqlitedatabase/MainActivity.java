@@ -56,10 +56,17 @@ public class MainActivity extends AppCompatActivity {
         Log.d("db" , "No of Effected Rows "+affectedRows);
 
 
+        //Delete contact
+        std1.setId(1);
+
+        db.deleteContactById(std1);
+
         //get all data
         List<Contact> allContacts = db.getAllContacts();
 
         Log.d("db", "All Contact List "+allContacts+"\n");
+
+
 
         for(Contact contact:allContacts){
             Log.d("db" , String.format("Id : %s \n Name : %s \n Phone Number : %s \n ," , contact.getId(),contact.getName() , contact.getPhoneNumber()));
