@@ -53,9 +53,9 @@ public class MyDbHandler extends SQLiteOpenHelper {
 
 
     // ================== this method return all contacts data
-    public List<Contact> getAllContacts(){
+    public ArrayList<Contact> getAllContacts(){
 
-        List<Contact> contactList = new ArrayList<>();
+        ArrayList<Contact> contactList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
 
         //generate query to read the database

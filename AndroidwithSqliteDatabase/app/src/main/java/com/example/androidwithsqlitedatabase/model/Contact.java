@@ -1,13 +1,15 @@
 package com.example.androidwithsqlitedatabase.model;
 
-public class Contact {
+import java.io.Serializable;
+
+public class Contact implements Serializable {
 
     private int id;
     private String name;
     private String phoneNumber;
 
     // ========================= constructor start from here
-    public Contact( String name, String phoneNumber) {
+    public Contact(String name, String phoneNumber) {
         this.name = name;
         this.phoneNumber = phoneNumber;
     }

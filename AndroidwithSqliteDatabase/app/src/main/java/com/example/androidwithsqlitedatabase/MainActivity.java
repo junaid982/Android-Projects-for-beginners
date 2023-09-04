@@ -2,12 +2,15 @@ package com.example.androidwithsqlitedatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 
 import com.example.androidwithsqlitedatabase.data.MyDbHandler;
 import com.example.androidwithsqlitedatabase.model.Contact;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         std4.setPhoneNumber("000000000");
 
         int affectedRows = db.updateContact(std4);
-        Log.d("db" , "No of Effected Rows "+affectedRows);
+        Log.d("db", "No of Effected Rows " + affectedRows);
 
 
         //Delete contact
@@ -62,16 +65,19 @@ public class MainActivity extends AppCompatActivity {
         db.deleteContactById(std1);
 
         //get all data
-        List<Contact> allContacts = db.getAllContacts();
+        ArrayList<Contact> allContacts = db.getAllContacts();
 
-        Log.d("db", "All Contact List "+allContacts+"\n");
+        Log.d("db", "All Contact List " + allContacts + "\n");
 
-
-
-        for(Contact contact:allContacts){
-            Log.d("db" , String.format("Id : %s \n Name : %s \n Phone Number : %s \n ," , contact.getId(),contact.getName() , contact.getPhoneNumber()));
+        for (int i = 0; i < allContacts.size(); i++) {
+            Log.d("db1>>>>>>>>>>>>>>>", String.format("Id : %s \n Name : %s \n Phone Number : %s \n ,", allContacts.get(i).getId(), allContacts.get(i).getName(), allContacts.get(i).getPhoneNumber()));
         }
 
+
+        for (Contact contact : allContacts) {
+            Log.d("db2>>>>>>>>>>>>>>>", String.format("Id : %s \n Name : %s \n Phone Number : %s \n ,", contact.getId(), contact.getName(), contact.getPhoneNumber()));
+        }
+        startActivity(new Intent(MainActivity.this, ContactListActivity.class));
 
 
     }
