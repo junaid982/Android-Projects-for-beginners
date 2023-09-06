@@ -23,12 +23,12 @@ public class MainActivity extends AppCompatActivity {
 
         //add data to a model
 
-        ContactModel model = new ContactModel(R.drawable.user , "Junaid Ansari" , "9821209237");
+        ContactModel model = new ContactModel(R.drawable.user , "Junaid Ansari" , "9821209258");
         arrConatct.add(model);
 
         // simple way to add
-        arrConatct.add(new ContactModel(R.drawable.user , "Khan Shaziya" , "8898991357"));
-        arrConatct.add(new ContactModel(R.drawable.user , "Ayaan Khan" , "9892993958"));
+        arrConatct.add(new ContactModel(R.drawable.user , "Khan Shaz" , "8898991579"));
+        arrConatct.add(new ContactModel(R.drawable.user , "Ayaan Khan" , "9892993952"));
         arrConatct.add(new ContactModel(R.drawable.user , "Ayaan Khan" , "9899874561"));
         arrConatct.add(new ContactModel(R.drawable.user , "Sohail Khan" , "987456325"));
         arrConatct.add(new ContactModel(R.drawable.user , "Ansar " , "7896321458"));
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         arrConatct.add(new ContactModel(R.drawable.user , "Harsh R" , "9514568527"));
         arrConatct.add(new ContactModel(R.drawable.user , "Abrab Khan" , "8527531479"));
         arrConatct.add(new ContactModel(R.drawable.user , "Nitesh Aru" , "9514569874"));
-        arrConatct.add(new ContactModel(R.drawable.user , "Khan Shaziya" , "8898991357"));
+        arrConatct.add(new ContactModel(R.drawable.user , "Khan F" , "8898991147"));
         arrConatct.add(new ContactModel(R.drawable.user , "Ayaan Khan" , "9892993958"));
         arrConatct.add(new ContactModel(R.drawable.user , "Ayaan Khan" , "9899874561"));
         arrConatct.add(new ContactModel(R.drawable.user , "Sohail Khan" , "987456325"));
