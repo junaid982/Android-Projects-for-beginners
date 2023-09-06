@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity {
         Contact std4 = new Contact();
 
         std.setName("Junaid Ansari");
-        std.setPhoneNumber("9821209237");
+        std.setPhoneNumber("9821209789");
 
         std1.setName("Khan Shaziya");
-        std1.setPhoneNumber("8898991357");
+        std1.setPhoneNumber("889456");
 
         std2.setName("Ansari Junaid");
-        std2.setPhoneNumber("9892339358");
+        std2.setPhoneNumber("9892339753");
 
         std3.setName("Ayaan");
         std3.setPhoneNumber("987456321");
