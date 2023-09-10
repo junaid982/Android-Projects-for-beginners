@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -26,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
         btnOpenDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                // Toast.makeText(MainActivity.this, "CLicked", Toast.LENGTH_SHORT).show();
+                Dialog dialog = new Dialog(MainActivity.this);
+                dialog.setContentView(R.layout.add_update_layout);
             }
         });
 
