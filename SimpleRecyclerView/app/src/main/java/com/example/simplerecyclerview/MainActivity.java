@@ -63,9 +63,16 @@ public class MainActivity extends AppCompatActivity {
 
 
                         arrConatct.add(new ContactModel(name , number));
+                        adapter.notifyItemInserted(arrConatct.size()-1);
 
+                        recyclerView.scrollToPosition(arrConatct.size()-1);
+
+                        dialog.dismiss();
                     }
                 });
+
+
+                dialog.show();
 
 
             }
